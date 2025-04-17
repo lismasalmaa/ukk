@@ -19,6 +19,7 @@ class SaleController extends Controller
     {
         $user = Auth::user();
         $detail_sale = Detail_sale::all();
+<<<<<<< HEAD
     
         // Query dasar untuk sales
         $salesQuery = Sale::with('member', 'user')->orderBy('id', 'desc');
@@ -50,6 +51,11 @@ class SaleController extends Controller
     }
     
     
+=======
+        $sales = Sale::with('member', 'user')->orderBy('id', 'desc')->get();
+        return view('employee.sale.index', compact('sales', 'detail_sale', 'user'));
+    }
+>>>>>>> 01f517eb54fb37af3f3c289602eeca206ab7c229
 
     public function indexAdmin(Request $request)
     {
@@ -232,6 +238,7 @@ class SaleController extends Controller
         return $pdf->download('receipt.pdf');
     }
 
+<<<<<<< HEAD
     public function exportExcel(Request $request)
     {
         $day = $request->input('day');
@@ -262,4 +269,14 @@ class SaleController extends Controller
     }
     
     
+=======
+    public function exportExcel()
+    {
+        if (Auth::user()->role === 'admin') {
+            return redirect()->back()->with('error', 'Anda tidak memiliki akses!');
+        } else {
+            return Excel::download(new SalesExport, 'laporan-penjualan.xlsx');
+        }
+    }
+>>>>>>> 01f517eb54fb37af3f3c289602eeca206ab7c229
 }

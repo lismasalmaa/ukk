@@ -57,7 +57,10 @@ Route::middleware(['isEmployee', 'isLogin'])->prefix('employee')->name('employee
         Route::get('/print/{id}', 'print')->name('print');
         Route::put('/updateSale/{id}', 'updateSale')->name('updateSale');
         Route::get('/exportExcel', 'exportExcel')->name('exportExcel');
+<<<<<<< HEAD
         Route::get('/exportExcel/filter', 'exportFilterExcel')->name('exportExcelFiltered');
+=======
+>>>>>>> 01f517eb54fb37af3f3c289602eeca206ab7c229
         Route::post('/importExcel', 'importExcel')->name('importExcel');
         Route::get('/exportPDF/{id}', 'exportPDF')->name('exportPDF');
     });

@@ -22,15 +22,22 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="p-4 d-flex justify-content-between align-items-center flex-wrap">
+<<<<<<< HEAD
                                 <a href="{{ route('employee.sale.exportExcel', request()->only(['tanggal', 'bulan', 'tahun'])) }}"
                                     class="btn btn-info mr-2">
                                     Ekspor Penjualan (.xlsx)
                                 </a>
                                 
+=======
+                                <a href="{{ route('employee.sale.exportExcel') }}" class="btn btn-info mr-2">Ekspor
+                                    Penjualan (.xlsx)</a>
+
+>>>>>>> 01f517eb54fb37af3f3c289602eeca206ab7c229
                                 <a href="{{ route('employee.sale.create') }}" class="btn btn-primary mt-2 mt-md-0">Tambah
                                     Penjualan</a>
                             </div>
 
+<<<<<<< HEAD
                             <form method="GET" action="{{ route('employee.sale.index') }}" class="row g-3 mb-4">
                                 <div class="col-md-3">
                                     <label for="tanggal" class="form-label">Tanggal</label>
@@ -70,6 +77,8 @@
                             
                             
 
+=======
+>>>>>>> 01f517eb54fb37af3f3c289602eeca206ab7c229
                             <div class="table-responsive">
                                 <table id="tabel-data" class="table table-striped">
                                     <thead>
@@ -91,7 +100,11 @@
                                                 @else
                                                     <td>BUKAN MEMBER</td>
                                                 @endif
+<<<<<<< HEAD
                                                 <td>{{ $sale->created_at->format('Y-m-d') }}</td>
+=======
+                                                <td>{{ $sale->sale_date }}</td>
+>>>>>>> 01f517eb54fb37af3f3c289602eeca206ab7c229
                                                 <td>Rp. {{ number_format($sale->total_price, 0, ',', '.') }}</td>
                                                 <td>{{ $sale->user->name }}</td>
                                                 <td>

@@ -23,8 +23,12 @@
 
         .table th,
         .table td {
+<<<<<<< HEAD
             text-align: right;
             float: left;
+=======
+            text-align: left;
+>>>>>>> 01f517eb54fb37af3f3c289602eeca206ab7c229
             padding: 12px;
             border: none;
         }
